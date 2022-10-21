@@ -26,4 +26,6 @@ int main()
     //To clear deque
 
     d.erase(d.begin(),d.begin()+1); //It will erase from a particular range
+
+    //We can use all methods used in vector
 }
