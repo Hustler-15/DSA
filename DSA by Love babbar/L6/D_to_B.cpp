@@ -11,7 +11,6 @@ int main()
     while(n!=0)
     {
         int bit = n&1;
-        bit = !bit;
         cout << bit;
         ans = (bit*pow(10,i)+ans);
         i++;

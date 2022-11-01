@@ -31,6 +31,7 @@ int main()
 
     cout<<"First element "<<v.front()<<endl;
     cout<<"Last element "<<v.back()<<endl;
+    cout<<"Empty or not"<<v.empty()<<endl;
 
     v.pop_back();  //Deletes the last element
 
