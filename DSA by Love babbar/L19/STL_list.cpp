@@ -16,7 +16,7 @@ int main()
 
     for(int i:l)
     {
-        cout<<i<<endl;  //We can directly access element in list we have to traverse 
+        cout<<i<<endl;  //We can not directly access element in list we have to traverse 
                         // Bcz it is built using doubly linked list                
     }
 
