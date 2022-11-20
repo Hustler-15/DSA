@@ -1,8 +1,16 @@
 #include<iostream>
 using namespace std;
+bool valid(char ch)
+{
+    if((ch>='a' && ch<='z') || (ch>='A' && ch<='B') || (ch>='0' && ch<='9'))
+    {
+        return 1;
+    }
+    return 0;
+}
 char toLowerCase(char ch)
 {
-    if(ch>='a' && ch<='z')
+    if((ch>='a' && ch<='z') || (ch>='0' && ch<='9'))
     {
         return ch;
     }
@@ -14,11 +22,20 @@ char toLowerCase(char ch)
 bool checkPalindrome(string s)
 {    int st = 0,ed = s.size()-1;
      while(st<=ed)
-     {  
-        if(toLowerCase(s[st])!=toLowerCase(s[ed]))
+     {  if(valid(s[st]) && valid(s[ed])){
+          if(toLowerCase(s[st])!=toLowerCase(s[ed]))
          {
              return 0;
          }
+     }
+        else if(valid(s[st]) &&  ~(valid(s[ed])))
+        {
+            ed--;
+        }
+        else if(~(valid(s[st])) && valid(s[ed]))
+                {
+                    st++;
+                }        
          else
          {
          st++;
@@ -27,3 +44,6 @@ bool checkPalindrome(string s)
      }
  return 1;
 }
+
+
+//https://www.codingninjas.com/codestudio/problems/check-if-the-string-is-a-palindrome_1062633?utm_source=youtube&utm_medium=affiliate&utm_campaign=love_babbar_5
