@@ -12,7 +12,6 @@ int main()
 
     //another way to insert
     m.insert({5,"bheem"});
-    
     cout<<"Before erase"<<endl;
     for(auto i:m)
     {
