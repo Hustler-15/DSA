@@ -49,3 +49,4 @@ int main () {
 
     return 0;
 }
+//https://www.codingninjas.com/codestudio/guided-paths/pointers
