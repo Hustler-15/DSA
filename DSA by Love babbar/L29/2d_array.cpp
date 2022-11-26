@@ -7,7 +7,7 @@ int main()
     cin>>col;
     //Creating 2d array
     int** arr = new int* [row];
-    for(int i = 0;i<n;i++)
+    for(int i = 0;i<col;i++)
     {
         arr[i] = new int[col];
     }
