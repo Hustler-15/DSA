@@ -2,7 +2,7 @@
 using namespace std;
 bool valid(char ch)
 {
-    if((ch>='a' && ch<='z') || (ch>='A' && ch<='B') || (ch>='0' && ch<='9'))
+    if((ch>='a' && ch<='z') || (ch>='A' && ch<='Z') || (ch>='0' && ch<='9'))
     {
         return 1;
     }
@@ -22,26 +22,31 @@ char toLowerCase(char ch)
 bool checkPalindrome(string s)
 {    int st = 0,ed = s.size()-1;
      while(st<=ed)
-     {  if(valid(s[st]) && valid(s[ed])){
-          if(toLowerCase(s[st])!=toLowerCase(s[ed]))
+     {  if(valid(s[st]) && valid(s[ed]))
          {
-             return 0;
+              if(toLowerCase(s[st])!=toLowerCase(s[ed]))
+             {
+                 return 0;
+             }
+         st++;
+         ed--;
          }
-     }
-        else if(valid(s[st]) &&  ~(valid(s[ed])))
+     
+        else if(!(valid(s[ed])))
         {
             ed--;
         }
-        else if(~(valid(s[st])) && valid(s[ed]))
+        else if(!(valid(s[st])) )
                 {
                     st++;
                 }        
          else
          {
-         st++;
-         ed--;
+             st++;
+             ed--;
          }
      }
+     
  return 1;
 }
 
