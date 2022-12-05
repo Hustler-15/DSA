@@ -3,15 +3,15 @@
 using namespace std;
 class Solution {
 private:
-    bool valid(char ch)
+bool valid(char ch)
 {
-    if((ch>='a' && ch<='z') || (ch>='A' && ch<='B') || (ch>='0' && ch<='9'))
+    if((ch>='a' && ch<='z') || (ch>='A' && ch<='Z') || (ch>='0' && ch<='9'))
     {
         return 1;
     }
     return 0;
 }
-    char toLowerCase(char ch)
+char toLowerCase(char ch)
 {
     if((ch>='a' && ch<='z') || (ch>='0' && ch<='9'))
     {
@@ -22,41 +22,36 @@ private:
         return temp;
     }
 }
-    bool checkpalindrome(string s)
-    {
-        int st = 0;
-        int ed = s.length()-1;
-        while(st<=ed)
-        {
-            if(s[st]!= s[ed])
-            {
-                return 0;
-            }
-            else
-            {
-                st++;
-                ed--;
-            }
-        }
-        return 1;
-    }
 public:
     bool isPalindrome(string s) {
-        //remove special characters
-        string temp = "";
-        for(int j = 0;j<s.length();j++)
+      int st = 0,ed = s.size()-1;
+     while(st<=ed)
+     {  if(valid(s[st]) && valid(s[ed]))
+         {
+              if(toLowerCase(s[st])!=toLowerCase(s[ed]))
+             {
+                 return 0;
+             }
+         st++;
+         ed--;
+         }
+     
+        else if(!(valid(s[ed])))
         {
-            if(valid(s[j]))
-            {
-                temp.push_back(s[j]);
-            }
+            ed--;
         }
-        //to lower case
-        for(int j = 0;j<temp.length();j++)
-        {
-            temp[j] = toLowerCase(temp[j]);
-        }
-        return checkpalindrome(temp);
-    }
-};
+        else if(!(valid(s[st])) )
+                {
+                    st++;
+                }        
+         else
+         {
+             st++;
+             ed--;
+         }
+     }
+     
+ return 1;
+}
+};  
 //https://leetcode.com/problems/valid-palindrome/submissions/
