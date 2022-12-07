@@ -41,7 +41,7 @@ void insertAtTail(node* &tail,int d)
     tail = temp;
 }
 
-void insertAtPosition(node* &head, int position, int d)
+void insertAtPosition(node* &tail, node* &head, int position, int d)
 {   //Insert at start
     if(position == 1)
 {
@@ -50,7 +50,7 @@ void insertAtPosition(node* &head, int position, int d)
 }   
     //Insert at particular position except start and end
     node* temp = head;
-    cnt = 1;
+    int cnt = 1;
     while(cnt < position-1)
     {
         temp = temp->next;
@@ -65,7 +65,7 @@ void insertAtPosition(node* &head, int position, int d)
     }
 
     node* nodeToInsert = new node(d);
-    nodeToInsert->next = tem->next;
+    nodeToInsert->next = temp->next;
     temp->next = nodeToInsert;
 }
 
@@ -78,6 +78,7 @@ void print(node* &head)
         cout<<temp->data<<" ";
         temp = temp->next;
     }
+}    
 
 void deleteNode(int position, node* &head){
     //deleting first or start node
@@ -105,7 +106,6 @@ void deleteNode(int position, node* &head){
 
 int main()
 {
-    node* node1 = new node();
-    cout<< node1 -> data <<endl;
-    cout<< node1 -> next <<endl;
+    
+    
 }
