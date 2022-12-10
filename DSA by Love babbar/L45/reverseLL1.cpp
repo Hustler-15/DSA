@@ -24,6 +24,39 @@ class Node{
     }
 };
 
+//Another Recursive solution
+Node* reverse1(Node* head)
+{
+    //Base case
+    if(head==NULL || head->next == NULL)
+    {
+        return head;
+    }
+
+    Node* chotahead = reverse1(head->next);
+    head->next->next = head;
+    head->next = NULL;
+
+    return chotahead;
+}
+
+//Using recursion
+void reverse(Node* head, Node* curr, Node* prev)
+{
+    //Base case
+    if(curr->next == NULL)
+    {
+        head = prev;
+        return;
+    }
+
+    Node* forward = curr->next;
+    reverse(head, forward, curr);
+    curr->next = prev;
+
+}
+
+//using iteration
 Node* reverseLinkedList(Node* head)
 {
     {
