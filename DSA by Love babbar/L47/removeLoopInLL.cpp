@@ -92,3 +92,5 @@ Node* removeLoop(Node* head)
     temp->next = NULL;
     return head;
 }
+
+//https://www.codingninjas.com/codestudio/problems/interview-shuriken-42-detect-and-remove-loop_241049?leftPanelTab=0
