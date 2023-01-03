@@ -19,7 +19,7 @@ int main()
     cout<<"To check empty or not "<<a.empty()<<endl;   
 
     cout<<"First element "<<a.front()<<endl;
-    cout<<"Last element "<<a.back()<<endl;x
+    cout<<"Last element "<<a.back()<<endl;
 
 
 }

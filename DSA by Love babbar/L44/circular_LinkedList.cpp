@@ -36,7 +36,7 @@ void insertNode(Node* tail, int element, int d)
     else{
         //assuming the element is present
         Node* curr = tail;
-        while(current->data!=element)
+        while(curr->data!=element)
         {
             curr = curr->next;
         }
