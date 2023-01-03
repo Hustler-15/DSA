@@ -29,7 +29,7 @@ bool detectLoop(Node* head)
 {
     if(head == NULL)
     {
-        return false;
+        return NULL;
     }
 
     map<Node*, bool> visited;
