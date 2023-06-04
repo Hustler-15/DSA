@@ -1,19 +1,18 @@
 #include <iostream>
 #include <vector>
 using namespace std;
-class BinaryTreeNode
-{
-public:
-    int data;
-    BinaryTreeNode *left;
-    BinaryTreeNode *right;
+class BinaryTreeNode {
+    public : 
+    T data;
+    BinaryTreeNode<T> *left;
+    BinaryTreeNode<T> *right;
 
-    BinaryTreeNode(int data)
-    {
-        this->data = data;
+    BinaryTreeNode(T data) {
+        this -> data = data;
         left = NULL;
         right = NULL;
     }
+    
 };
 void inorder(BinaryTreeNode<int> *root, vector<int> &inorderVal)
 {
