@@ -53,7 +53,7 @@ class Trie{
         }
         void insertWord(string word)
         {
-            insertUtil(root, word);
+            return insertUtil(root, word);
         }
 
         bool searchUtil(TrieNode* root, string word)
